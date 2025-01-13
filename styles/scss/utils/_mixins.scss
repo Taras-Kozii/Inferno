@@ -10,7 +10,7 @@
 }
 
 @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
-  $maxWidth: 1260;
+  $maxWidth: 1280;
   $addSize: $decktopSize - $mobileSize;
 
   @if ($tableSize == 0) {

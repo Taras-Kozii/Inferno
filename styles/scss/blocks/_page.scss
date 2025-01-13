@@ -1,0 +1,25 @@
+.page {
+  font-family: 'Jost', serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5; /* 33px/22 */
+  letter-spacing: 0.22px;
+  color: $text-color-dark;
+  background-color: $bg-color;
+  overflow-x: clip;
+}
+.page.lock {
+  overflow: clip;
+}
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow-x: clip;
+}
+[class*="__container"] {
+  max-width: 1280px;
+  @include adaptive-property(padding-inline, 10, 20, 40);
+  margin: 0 auto;
+  overflow-x: clip;
+}
