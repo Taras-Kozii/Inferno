@@ -1,0 +1,20 @@
+.button {
+  width: max-content;
+  padding: 17px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 21px;
+  color: #fff;
+  border-radius: 18px;
+  border: 2px solid $text-color-dark;
+  background-color: $text-color-dark;
+  &__img {
+    display: flex;
+
+    img {
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

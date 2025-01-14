@@ -7,6 +7,15 @@
   color: $text-color-dark;
   background-color: $bg-color;
   overflow-x: clip;
+
+  &__header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: $bg-color;
+  }
 }
 .page.lock {
   overflow: clip;

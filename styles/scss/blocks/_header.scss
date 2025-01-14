@@ -1,0 +1,5 @@
+.header {
+  &__content {
+    @include adaptive-property(height, 50, 70, 106);
+  }
+}
