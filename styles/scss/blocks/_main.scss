@@ -1,5 +1,12 @@
 .main {
   &__hero {
     position: relative;
+    @include adaptive-property(margin-bottom, 50, 100, 175);
+  }
+  &__options {
+    @include adaptive-property(margin-bottom, 50, 90, 170);
+  }
+  &__designs {
+    @include adaptive-property(margin-bottom, 50, 90, 140);
   }
 }
