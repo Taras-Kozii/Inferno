@@ -1,5 +1,6 @@
 .hero {
   height: 100vh;
+  @include p-margin;
   &__img {
     position: relative;
     left: 0;
@@ -44,13 +45,10 @@
   &__title {
     margin-bottom: 20px;
     @extend %section-title;
-    @include adaptive-property(font-size, 25, 45, 80);
+    @include adaptive-property(font-size, 30, 45, 80);
     line-height: 1.2; /* 96px/80 */
     letter-spacing: 0.22px;
     text-align: left;
-  }
-  &__text p:not(:last-child) {
-    margin-bottom: 10px;
   }
   &__text {
     @include adaptive-property(margin-bottom, 20, 25, 35);

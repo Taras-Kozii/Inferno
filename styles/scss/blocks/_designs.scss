@@ -1,4 +1,6 @@
 .designs {
+  @include p-margin;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -21,7 +23,6 @@
     border-bottom-left-radius: 20.777%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-
     @include onTablet {
       flex: 0 0 49.33%;
     }
@@ -29,5 +30,19 @@
     img {
       @include ibg;
     }
+  }
+  &__content-text {
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 20, 30, 40);
+  }
+  &__title {
+    @extend %section-title;
+    @include adaptive-property(font-size, 25, 35, 50);
+    letter-spacing: 0.22px;
+  }
+  &__contact {
+    margin-bottom: 10px;
   }
 }
