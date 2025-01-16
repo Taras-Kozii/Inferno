@@ -9,4 +9,7 @@
   &__designs {
     @include adaptive-property(margin-bottom, 50, 90, 140);
   }
+  &__about {
+    @include adaptive-property(margin-bottom, 50, 90, 140);
+  }
 }

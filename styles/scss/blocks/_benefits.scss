@@ -1,0 +1,29 @@
+.benefits {
+  background-color: $bg-color-gray;
+
+  &__content {
+    columns: 2;
+    column-rule: 1px solid $text-color-red;
+    @include adaptive-property(padding-block, 50, 90, 140);
+    @include onTablet {
+      columns: 4;
+    }
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+  }
+  &__text {
+    color: $text-color-gray;
+    text-align: center;
+  }
+  &__digit {
+    font-family: 'DM Serif Display', serif;
+    @include adaptive-property(font-size, 30, 55, 85);
+    letter-spacing: 1.7px;
+    text-align: center;
+    color: $text-color-red;
+  }
+}
