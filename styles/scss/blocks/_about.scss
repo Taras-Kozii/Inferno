@@ -1,0 +1,58 @@
+.about {
+  &__content {
+    padding-top: 105px;
+    padding-bottom: 120px;
+    @include adaptive-property(border-radius, 30, 50, 70);
+    background-color: $bg-color-gray;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  &__title {
+    @extend %section-title;
+    @include adaptive-property(font-size, 20, 30, 45);
+    @include adaptive-property(margin-bottom, 20, 32, 48);
+    text-align: center;
+  }
+  &__items {
+    display: grid;
+    padding-inline: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 355px));
+    column-gap: 18px;
+    row-gap: 2.5rem;
+    justify-content: center;
+  }
+  &__card {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    @include adaptive-property(row-gap, 15, 20, 25);
+    @include adaptive-property(padding-top, 30, 40, 50);
+    @include adaptive-property(padding-bottom, 25, 35, 45);
+    @include adaptive-property(padding-inline, 20, 25, 35);
+    border-radius: 30px;
+    background-color: $bg-color;
+  }
+  &__person {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+  }
+  &__img {
+    width: 77px;
+    height: 77px;
+    @include positiion-r;
+    border-radius: 50%;
+    border-radius: 100px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    img {
+      @include ibg;
+    }
+  }
+  &__name {
+    @extend %section-subtitle;
+  }
+  &__city {
+    font-size: 18px;
+    color: $text-color-dark;
+  }
+}

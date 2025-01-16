@@ -1,6 +1,6 @@
 %section-subtitle {
   font-family: 'DM Serif Display', serif;
-  font-size: 25px;
+  @include adaptive-property(font-size, 20, 25, 25);
   line-height: 1.5; /* 37.5px/25 */
   font-weight: 400;
   font-style: normal;

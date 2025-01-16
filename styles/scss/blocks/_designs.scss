@@ -13,9 +13,7 @@
     }
   }
   &__img {
-    position: relative;
-    left: 0;
-    top: 0;
+    @include positiion-r;
     flex: 0 0 100%;
     aspect-ratio: 592 / 635;
     overflow: hidden;
@@ -43,6 +41,19 @@
     letter-spacing: 0.22px;
   }
   &__contact {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 20px;
     margin-bottom: 10px;
+  }
+  &__call-img {
+    @include adaptive-property(width, 60, 80, 93);
+    @include adaptive-property(height, 60, 80, 93);
+    border-radius: 50%;
+    background-color: $bg-color-gray;
+    @include flex-center;
+  }
+  &__call-text {
+    color: $text-color-gray;
   }
 }
