@@ -1,0 +1,30 @@
+.contact {
+  @include p-margin;
+
+  &__content {
+    @include adaptive-property(padding-block, 40, 70, 100);
+    @include flex-center;
+    flex-direction: column;
+    background-color: $text-color-dark;
+    border-radius: 70px;
+    color: $bg-color;
+  }
+  &__title {
+    margin-bottom: 10px;
+    @extend %section-subtitle;
+    @include adaptive-property(font-size, 22, 35, 50);
+    text-align: center;
+  }
+  &__text {
+    margin-bottom: 30px;
+  }
+  &__button {
+    background-color: $text-color-red;
+    svg {
+      width: 24px;
+      height: 17px;
+      object-position: center;
+      object-fit: contain;
+    }
+  }
+}

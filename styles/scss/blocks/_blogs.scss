@@ -1,0 +1,35 @@
+.blogs {
+  @include p-margin;
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 0 auto;
+    text-align: center;
+    @include adaptive-property(margin-bottom, 30, 50, 70);
+    @include onTablet {
+      max-width: 50%;
+    }
+  }
+  &__title {
+    @extend %section-title;
+    @include adaptive-property(font-size, 22, 35, 47);
+  }
+  &__text {
+    color: $text-color-gray;
+  }
+  &__cards {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @include adaptive-property(row-gap, 20, 40, 40);
+    column-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+    @include onDesktop {
+      grid-template-columns: repeat(3, minmax(280px, 1fr));
+    }
+  }
+}

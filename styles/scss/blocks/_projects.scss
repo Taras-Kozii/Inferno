@@ -1,0 +1,72 @@
+.projects {
+  @include p-margin;
+  &__text-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 0 auto;
+    text-align: center;
+    @include adaptive-property(margin-bottom, 30, 50, 70);
+    @include onTablet {
+      max-width: 65.5%;
+    }
+  }
+  &__title {
+    @extend %section-title;
+    @include adaptive-property(font-size, 22, 35, 47);
+  }
+  &__text {
+    color: $text-color-gray;
+  }
+  &__cards {
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    @include adaptive-property(row-gap, 20, 40, 60);
+    column-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+  }
+}
+.card-project {
+  &__content {
+    @include flex-center(space-between);
+    column-gap: 10px
+  }
+  &__img {
+    @include positiion-r;
+    width: 100%;
+    margin-bottom: 24px;
+    aspect-ratio: 590 / 661;
+    border-radius: 0px 80px 0px 0px;
+    border-top-right-radius: 13.559%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    img {
+      @include ibg;
+    }
+  }
+  &__title {
+    @extend %section-subtitle;
+    @include adaptive-property(font-size, 18, 20, 24);
+    a {
+      color: $text-color-dark;
+    }
+  }
+  &__subtitle {
+    a {
+      color: $text-color-gray;
+    }
+  }
+  &__button {
+    flex: 0 0 auto;
+    @include adaptive-property(width, 40, 60, 70);
+    @include adaptive-property(height, 40, 60, 70);
+    border-radius: 50%;
+    background-color: $bg-color-gray;
+    @include flex-center;
+  }
+}

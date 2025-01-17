@@ -99,8 +99,8 @@
     margin-bottom: 10px;
   }
 }
-@mixin flex-center {
+@mixin flex-center($position: center) {
   display: flex;
-  justify-content: center;
+  justify-content: $position;
   align-items: center;
 }
