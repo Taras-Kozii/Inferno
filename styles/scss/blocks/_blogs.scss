@@ -21,7 +21,7 @@
   &__cards {
     padding: 0 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 387px));
     @include adaptive-property(row-gap, 20, 40, 40);
     column-gap: 20px;
 
@@ -31,5 +31,65 @@
     @include onDesktop {
       grid-template-columns: repeat(3, minmax(280px, 1fr));
     }
+  }
+}
+.card-blogs {
+  padding: 21px;
+  border: 1px solid #E7E7E7;
+  @include adaptive-property(border-radius, 26, 42, 62);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  &__img {
+    @include positiion-r;
+    width: 100%;
+    aspect-ratio: 340 / 300;
+    margin-bottom: 15px;
+    border-radius: 13% 13% 0px 0px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+
+    img {
+      @include ibg;
+    }
+  }
+  &__img:before {
+      content: attr(data-text);
+      position: absolute;
+      left: 24px;
+      bottom: 29px;
+      z-index: 10;
+      display: block;
+      padding: 10px;
+      border-radius: 8px 8px 8px 0px;
+      background: $bg-color;
+      color: $text-color-gray;
+      font-size: 15px;
+  }
+  &__title {
+    font-family: 'DM Serif Display', serif;
+    @include adaptive-property(font-size, 20, 25, 25);
+    margin-bottom: 20px;
+    line-height: 1.4; /* 35px/25 */
+    letter-spacing: 0.5px;
+    
+    a {
+      color: $text-color-dark;
+    }
+  }
+  &__footer {
+    @include adaptive-property(margin-bottom, 20, 30, 40);
+    @include flex-center(space-between);
+  }
+  &__date {
+    font-size: 16px;
+    color: $text-color-gray;
+  }
+  &__button {
+    flex: 0 0 auto;
+    @include adaptive-property(width, 40, 44, 52);
+    @include adaptive-property(height, 40, 44, 52);
+    border-radius: 50%;
+    background-color: $bg-color-gray;
+    @include flex-center;
   }
 }
