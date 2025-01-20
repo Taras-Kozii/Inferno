@@ -1,0 +1,87 @@
+.footer {
+  &__top {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    @include adaptive-property(margin-bottom, 45, 85, 110);
+    @include onDesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      column-gap: 16px;
+    }
+  }
+  &__navs {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    column-gap: 16px;
+
+    @include onTablet {
+      flex: 0 0 36.333%;
+    }
+
+  }
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include onDesktop {
+      align-items: start;
+    }
+  }
+  &__contact,
+  &__socials {
+    text-align: center;
+    @include onDesktop{
+      text-align-last: left;
+    }
+  }
+  &__subtitle {
+    @extend %section-subtitle;
+    @include adaptive-property(margin-bottom, 15, 20, 20);
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    @include adaptive-property(row-gap, 15, 20, 30);
+  }
+  &__link {
+    color: $text-color-gray;
+  }
+  &__logo {
+    margin-bottom: 15px;
+    @extend %logo;
+  }
+  &__slogan {
+    @include adaptive-property(margin-bottom, 20, 25, 30);
+    @include onDesktop {
+      text-align-last: left;
+    }
+  }
+  &__icons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include adaptive-property(column-gap, 20, 30, 40);
+    @include onDesktop {
+      justify-content: start;
+    }
+  }
+  &__bottom-text {
+    padding: 35px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $text-color-gray;
+    @include onTablet {
+      flex-direction: row;
+      text-align: justify;
+    }
+
+    span {
+      color: $text-color-red;
+    }
+  }
+}
