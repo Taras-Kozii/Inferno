@@ -24,4 +24,7 @@
   &__blogs {
     @include adaptive-property(margin-bottom, 50, 90, 140);
   }
+  &__brands {
+    @include adaptive-property(margin-bottom, 35, 70, 100);
+  }
 }

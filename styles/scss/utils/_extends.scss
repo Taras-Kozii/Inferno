@@ -11,3 +11,17 @@
   font-weight: 400;
   font-style: normal;
 }
+%logo {
+  display: block;
+  @include positiion-r;
+  @include adaptive-property(height, 25, 35, 50);
+  @include adaptive-property(width, 100, 120, 177);
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-position: center;
+    object-fit: cover;
+  }
+}

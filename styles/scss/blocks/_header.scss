@@ -1,5 +1,17 @@
 .header {
   &__content {
+    @include flex-center(space-between);
     @include adaptive-property(height, 50, 70, 106);
+  }
+}
+.burger {
+  @include positiion-r;
+  width: 30px;
+  height: 30px;
+
+
+  &:before,
+  &:after {
+    content: "";
   }
 }
