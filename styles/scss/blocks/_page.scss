@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .page {
   font-family: 'Jost', serif;
   @include adaptive-property(font-size, 16, 20, 22);
