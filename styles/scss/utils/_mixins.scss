@@ -104,3 +104,10 @@
   justify-content: $position;
   align-items: center;
 }
+@mixin screen-hover {
+  @media (hover: none) {
+    &:active {
+      @content;
+    }
+  }
+}

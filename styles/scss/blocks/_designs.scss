@@ -55,5 +55,6 @@
   }
   &__call-text {
     color: $text-color-gray;
+    @include hover-line;
   }
 }

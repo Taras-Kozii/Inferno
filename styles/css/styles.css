@@ -377,6 +377,9 @@ html {
     font-size: 19px;
   }
 }
+.menu__link.active {
+  color: #CDA274;
+}
 
 .main__hero {
   position: relative;
@@ -882,6 +885,36 @@ html {
 }
 .designs__call-text {
   color: #4D5053;
+  position: relative;
+}
+.designs__call-text:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  height: 2px;
+  width: 0%;
+  border-radius: 5px;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+  background-color: #292F36;
+}
+.designs__call-text:hover:before {
+  left: 0;
+  right: 0;
+  width: 100%;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+@media (hover: none) {
+  .designs__call-text:active :before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    -webkit-transition: 0.4s ease-in;
+    transition: 0.4s ease-in;
+  }
 }
 
 .about__content {
