@@ -8,7 +8,6 @@
     @content;
   }
 }
-
 @mixin adaptive-property($property, $mobileSize, $tableSize, $decktopSize) {
   $maxWidth: 1280;
   $addSize: $decktopSize - $mobileSize;
@@ -37,20 +36,6 @@
     }
   }
 }
-@mixin grid-tablet {
-  @media (min-width: $tablet-min-width) {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 24px;
-  }
-}
-@mixin grid-desktop {
-  @media (min-width: $desktop-min-width) {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    column-gap: 24px;
-  }
-}
 @mixin positiion-r {
   position: relative;
   left: 0;
@@ -64,35 +49,6 @@
   height: 100%;
   object-fit: $size;
   object-position: center;
-}
-@mixin hover-item {
-  transform: $transition-duraction ease-in;
-
-  &:hover {
-    @content;
-  }
-}
-
-@mixin screen-hover {
-  @media (hover: none) {
-    &:active {
-      @content;
-    }
-  }
-}
-@mixin screen-hover-before {
-  @media (hover: none) {
-    &:active:before {
-      @content;
-    }
-  }
-}
-@mixin screen-hover-after {
-  @media (hover: none) {
-    &:active:active {
-      @content;
-    }
-  }
 }
 @mixin p-margin {
   &__text p:not(:last-child) {
@@ -109,5 +65,54 @@
     &:active {
       @content;
     }
+  }
+}
+@mixin hover-line($color: $text-color-dark) {
+  position: relative;
+  color: $color;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    height: 2px;
+    width: 0%;
+    border-radius: 5px;
+    transition: $transition-duraction ease-out;
+    background-color: $color;
+  }
+  &:hover:before {
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: $transition-duraction ease;
+  }
+  @include screen-hover {
+    :before {
+      left: 0;
+      right: 0;
+      width: 100%;
+      transition: $transition-duraction ease-in
+    }
+  }
+}
+@keyframes arrow-before {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes arrow-after {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
+    opacity: 0;
   }
 }

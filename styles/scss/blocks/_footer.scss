@@ -46,7 +46,7 @@
     @include adaptive-property(row-gap, 15, 20, 30);
   }
   &__link {
-    color: $text-color-gray;
+    @include hover-line($text-color-gray);
   }
   &__logo {
     margin-bottom: 15px;

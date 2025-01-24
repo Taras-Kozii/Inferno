@@ -53,12 +53,12 @@
     @extend %section-subtitle;
     @include adaptive-property(font-size, 18, 20, 24);
     a {
-      color: $text-color-dark;
+      @include hover-line;
     }
   }
   &__subtitle {
     a {
-      color: $text-color-gray;
+      @include hover-line($text-color-gray);
     }
   }
   &__button {

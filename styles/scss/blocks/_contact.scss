@@ -19,12 +19,17 @@
     margin-bottom: 30px;
   }
   &__button {
-    background-color: $text-color-red;
-    svg {
-      width: 24px;
-      height: 17px;
-      object-position: center;
-      object-fit: contain;
+    border: 2px solid $text-color-red;
+    background: linear-gradient(to right, rgba(205, 162, 116, 0) 25%, rgba(205, 162, 116, 1) 75%);
+    background-position: 99% 50%;
+    background-size: 400% 300%;
+    transition: 700ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:hover {
+      color: $text-color-red;
+    }
+    @include screen-hover {
+      color: $text-color-red;
     }
   }
 }

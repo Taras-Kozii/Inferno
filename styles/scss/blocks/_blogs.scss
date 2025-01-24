@@ -73,7 +73,7 @@
     letter-spacing: 0.5px;
     
     a {
-      color: $text-color-dark;
+      @include hover-line;
     }
   }
   &__footer {

@@ -114,8 +114,12 @@
     letter-spacing: 0.4px;
     color: $text-color-dark;
     z-index: 3;
+    @include hover-line;
   }
   &__link.active {
     color: $text-color-red;
+    &:before {
+      background-color: $text-color-red;
+    }
   }
 }
