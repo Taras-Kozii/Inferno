@@ -24,4 +24,10 @@
     object-position: center;
     object-fit: cover;
   }
+  &:hover {
+    animation: jello-horizontal $transition-duraction * 2 both;
+  }
+  @include screen-hover {
+    animation: jello-horizontal $transition-duraction * 2 both;
+  }
 }

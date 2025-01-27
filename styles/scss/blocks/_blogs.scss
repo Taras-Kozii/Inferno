@@ -50,6 +50,13 @@
 
     img {
       @include ibg;
+      transition: $transition-duraction ease-in-out 0.1s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      @include screen-hover {
+        transform: scale(1.05);
+      }
     }
   }
   &__img:before {
@@ -64,6 +71,13 @@
       background: $bg-color;
       color: $text-color-gray;
       font-size: 15px;
+      transform: translateY(0);
+      opacity: 1;
+      transition: $transition-duraction cubic-bezier(0.550, 0.085, 0.680, 0.530);
+  }
+  &__img:hover:before {
+    transform: translateY(200px);
+    opacity: 0;
   }
   &__title {
     font-family: 'DM Serif Display', serif;
@@ -91,5 +105,15 @@
     border-radius: 50%;
     background-color: $bg-color-gray;
     @include flex-center;
+  }
+  &:hover {
+    .card-blogs__button {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
+  }
+  @include screen-hover {
+    .card-blogs__button {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
   }
 }

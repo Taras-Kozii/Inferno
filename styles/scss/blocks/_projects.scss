@@ -28,6 +28,22 @@
     @include onTablet {
       grid-template-columns: repeat(2, minmax(280px, 1fr));
     }
+    &:hover .card-project__img {
+      filter: grayscale(1);
+    }
+    & .card-project__img:hover {
+      filter: grayscale(0);
+    }
+    & .card-project__img {
+      @include screen-hover {
+        filter: grayscale(0);
+      }
+    }
+    @include screen-hover {
+      .card-project__img {
+        filter: grayscale(1);
+      }
+    }
   }
 }
 .card-project {
@@ -44,9 +60,16 @@
     border-top-right-radius: 13.559%;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    transition: $transition-duraction ease-out;
 
     img {
       @include ibg;
+      &:hover {
+        filter: grayscale(0);
+      }
+      @include screen-hover {
+        filter: grayscale(0);
+      }
     }
   }
   &__title {
@@ -68,5 +91,15 @@
     border-radius: 50%;
     background-color: $bg-color-gray;
     @include flex-center;
+  }
+  &:hover {
+    .card-project__button {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
+  }
+  @include screen-hover {
+    &__button {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
   }
 }

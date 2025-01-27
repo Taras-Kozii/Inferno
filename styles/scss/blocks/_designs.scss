@@ -46,6 +46,14 @@
     column-gap: 20px;
     margin-bottom: 10px;
   }
+  &__call {
+    &:hover {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
+    @include screen-hover {
+      animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
+    }
+  }
   &__call-img {
     @include adaptive-property(width, 60, 80, 93);
     @include adaptive-property(height, 60, 80, 93);

@@ -29,6 +29,16 @@
     @include adaptive-property(padding-inline, 20, 25, 35);
     border-radius: 30px;
     background-color: $bg-color;
+    &:hover {
+      .about__img {
+        transform: scale(1.2);
+      }
+    }
+    @include screen-hover {
+      .about__img {
+        transform: scale(1.2);
+      }
+    }
   }
   &__person {
     display: flex;
@@ -43,6 +53,7 @@
     border-radius: 100px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    transition: $transition-duraction ease-out;
 
     img {
       @include ibg;
