@@ -6,7 +6,15 @@ const menu = document.querySelector('.header__menu');
 const fixItems = document.querySelectorAll('.right-fix-padding');
 const navLinks = document.querySelectorAll('[data-goto]');
 const header = document.querySelector('.header');
+const heroImg = document.querySelector('.hero__img');
 
+window.addEventListener('load', () => {
+  showCountsAnim();
+  showInk()
+});
+window.addEventListener('scroll', () => {
+  showInk();
+})
 
 burger.addEventListener('click', () => {
   lockPage();
@@ -33,6 +41,13 @@ for (const link of navLinks) {
   });
 }
 
+function showInk() {
+  if (isInView(heroImg, 0.1)) {
+    heroImg.classList.add('active');
+  } else {
+    heroImg.classList.remove('active');
+  }
+}
 function setFixPadding(paddingRight) {
   [...fixItems].forEach(item => item.style.paddingRight = paddingRight);
 }
@@ -49,3 +64,51 @@ function getScrollToBlockValue(link) {
     return valueToBlock | 0;
   }
 }
+function showCountsAnim() {
+  function initCounts(countsItems) {
+    const counts = countsItems ? countsItems : document.querySelectorAll('[data-counter]');
+    [...counts].forEach(item => countAnimate(item));
+  }
+  function countAnimate(count) {
+    let startTimestamp = null;
+    const duraction = parseInt(count.dataset.counter) ? parseInt(count.dataset.counter) : 1000;
+    const startValue = parseInt(count.innerHTML);
+    const startPosition = 0;
+
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duraction, 1);
+      count.innerHTML = Math.floor(progress * (startPosition + startValue));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  const options = { threshold: 0.5 };
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const targetElem = entry.target;
+        const countersIntems = targetElem.querySelectorAll('[data-counter]');
+        if (countersIntems.length) {
+          initCounts(countersIntems);
+        }
+      }
+    });
+  }, options);
+
+  const countsSections = document.querySelectorAll('.digits');
+  [...countsSections].forEach(section => observer.observe(section));
+}
+function isInView(elem, persent=0.35) {
+  const rect = elem.getBoundingClientRect();
+  const elemHeight = elem.offsetHeight;
+  const visiblePart = elemHeight * persent;
+  
+  return rect.bottom > 0 && rect.top < (
+    window.innerHeight - visiblePart || document.documentElement.clientHeight - visiblePart);
+}
+

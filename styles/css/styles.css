@@ -734,6 +734,8 @@ html {
   -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  inset: 0;
+  z-index: -1;
 }
 .hero__img img {
   position: absolute;
@@ -745,6 +747,14 @@ html {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+.hero__img.active {
+  -webkit-mask-image: url("../../images/ink-mask.gif");
+          mask-image: url("../../images/ink-mask.gif");
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
 }
 .hero__container {
   position: absolute;
@@ -2036,15 +2046,15 @@ html {
   transition: 0.4s ease-in-out 0.1s;
 }
 .card-blogs__img img:hover {
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
 }
 @media (hover: none) {
   .card-blogs__img img:active {
-    -webkit-transform: scale(1.05);
-        -ms-transform: scale(1.05);
-            transform: scale(1.05);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
   }
 }
 .card-blogs__img:before {
