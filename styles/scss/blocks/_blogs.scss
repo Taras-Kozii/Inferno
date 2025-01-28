@@ -35,9 +35,12 @@
 }
 .card-blogs {
   padding: 21px;
-  border: 1px solid #E7E7E7;
+  border: 1px solid #e7e7e7;
   @include adaptive-property(border-radius, 26, 42, 62);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transform: rotateX(80deg);
+  opacity: 0;
+  transition: $transition-duraction cubic-bezier(0.47, 0, 0.745, 0.715);
 
   &__img {
     @include positiion-r;
@@ -60,32 +63,32 @@
     }
   }
   &__img:before {
-      content: attr(data-text);
-      position: absolute;
-      left: 24px;
-      bottom: 29px;
-      z-index: 10;
-      display: block;
-      padding: 10px;
-      border-radius: 8px 8px 8px 0px;
-      background: $bg-color;
-      color: $text-color-gray;
-      font-size: 15px;
-      transform: translateY(0);
-      opacity: 1;
-      transition: $transition-duraction cubic-bezier(0.550, 0.085, 0.680, 0.530);
+    content: attr(data-text);
+    position: absolute;
+    left: 24px;
+    bottom: 29px;
+    z-index: 10;
+    display: block;
+    padding: 10px;
+    border-radius: 8px 8px 8px 0px;
+    background: $bg-color;
+    color: $text-color-gray;
+    font-size: 15px;
+    transform: translateY(0);
+    opacity: 1;
+    transition: $transition-duraction cubic-bezier(0.55, 0.085, 0.68, 0.53);
   }
   &__img:hover:before {
     transform: translateY(200px);
     opacity: 0;
   }
   &__title {
-    font-family: 'DM Serif Display', serif;
+    font-family: "DM Serif Display", serif;
     @include adaptive-property(font-size, 20, 25, 25);
     margin-bottom: 20px;
     line-height: 1.4; /* 35px/25 */
     letter-spacing: 0.5px;
-    
+
     a {
       @include hover-line;
     }
@@ -116,4 +119,11 @@
       animation: heartbeat $transition-duraction * 3 ease-in-out infinite both;
     }
   }
+}
+.card-blogs:nth-child(odd) {
+  transition-delay: 0.2s;
+}
+.card-blogs.active {
+  transform: rotateX(0);
+  opacity: 1;
 }

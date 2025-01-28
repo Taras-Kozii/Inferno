@@ -7,14 +7,25 @@ const fixItems = document.querySelectorAll('.right-fix-padding');
 const navLinks = document.querySelectorAll('[data-goto]');
 const header = document.querySelector('.header');
 const heroImg = document.querySelector('.hero__img');
+const animOpacityItems = document.querySelectorAll('.anim-opacity');
 
+document.addEventListener('DOMContentLoaded', showInk);
 window.addEventListener('load', () => {
   showCountsAnim();
-  showInk()
 });
 window.addEventListener('scroll', () => {
-  showInk();
-})
+  scrollAnim();
+});
+function scrollAnim() {
+  const animItems = document.querySelectorAll('.scroll-anim');
+  for (const item of animItems) {
+    if (isInView(item, 0.35)) {
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  }
+}
 
 burger.addEventListener('click', () => {
   lockPage();
@@ -42,11 +53,10 @@ for (const link of navLinks) {
 }
 
 function showInk() {
-  if (isInView(heroImg, 0.1)) {
-    heroImg.classList.add('active');
-  } else {
-    heroImg.classList.remove('active');
-  }
+  heroImg.classList.add('active');
+  heroImg.addEventListener('load', () => {
+    heroImg.style.display = 'block';
+  })
 }
 function setFixPadding(paddingRight) {
   [...fixItems].forEach(item => item.style.paddingRight = paddingRight);
@@ -111,4 +121,3 @@ function isInView(elem, persent=0.35) {
   return rect.bottom > 0 && rect.top < (
     window.innerHeight - visiblePart || document.documentElement.clientHeight - visiblePart);
 }
-

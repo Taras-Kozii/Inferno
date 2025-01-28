@@ -29,14 +29,14 @@
 
     &:before,
     &:after {
-      content:"";
+      content: "";
       display: inline-block;
       width: 24px;
       height: 17px;
       position: absolute;
       right: 0;
       top: calc(50% - 10px);
-      background-image: url('../../images/icons/arrow-left.svg');
+      background-image: url("../../images/icons/arrow-left.svg");
       background-position: center;
       background-size: contain;
       transition: $transition-duraction ease;
@@ -44,7 +44,7 @@
     &--red {
       &:before,
       &:after {
-        background-image: url('../../images/icons/arrow-left-black.svg');
+        background-image: url("../../images/icons/arrow-left-black.svg");
       }
     }
   }
@@ -59,7 +59,7 @@
   &:hover .button__img--red {
     &:before,
     &:after {
-      background-image: url('../../images/icons/arrow-left.svg');
+      background-image: url("../../images/icons/arrow-left.svg");
     }
   }
   @include screen-hover {

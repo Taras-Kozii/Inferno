@@ -19,7 +19,6 @@
     @include onTablet {
       flex: 0 0 36.333%;
     }
-
   }
   &__socials {
     display: flex;
@@ -32,7 +31,7 @@
   &__contact,
   &__socials {
     text-align: center;
-    @include onDesktop{
+    @include onDesktop {
       text-align-last: left;
     }
   }

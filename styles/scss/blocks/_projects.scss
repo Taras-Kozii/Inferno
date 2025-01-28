@@ -49,7 +49,7 @@
 .card-project {
   &__content {
     @include flex-center(space-between);
-    column-gap: 10px
+    column-gap: 10px;
   }
   &__img {
     @include positiion-r;
