@@ -7,7 +7,6 @@ const fixItems = document.querySelectorAll('.right-fix-padding');
 const navLinks = document.querySelectorAll('[data-goto]');
 const header = document.querySelector('.header');
 const heroImg = document.querySelector('.hero__img');
-const animOpacityItems = document.querySelectorAll('.anim-opacity');
 
 document.addEventListener('DOMContentLoaded', showInk);
 window.addEventListener('load', () => {
@@ -53,10 +52,8 @@ for (const link of navLinks) {
 }
 
 function showInk() {
-  heroImg.classList.add('active');
-  heroImg.addEventListener('load', () => {
-    heroImg.style.display = 'block';
-  })
+  heroImg.classList.toggle('active');
+  heroImg.style.display = 'block';
 }
 function setFixPadding(paddingRight) {
   [...fixItems].forEach(item => item.style.paddingRight = paddingRight);

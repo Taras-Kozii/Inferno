@@ -29,6 +29,9 @@
     @include adaptive-property(padding-inline, 20, 25, 35);
     border-radius: 30px;
     background-color: $bg-color;
+    transform: rotateX(80deg);
+    opacity: 0;
+    transition: $transition-duraction cubic-bezier(0.47, 0, 0.745, 0.715);
     &:hover {
       .about__img {
         transform: scale(1.2);
@@ -40,6 +43,14 @@
       }
     }
   }
+  &__card:nth-child(odd) {
+    transition-delay: 0.2s;
+  }
+  &__card.active {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+  
   &__person {
     display: flex;
     align-items: center;

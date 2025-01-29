@@ -10,6 +10,7 @@
   }
   &__card {
     @include flex-center;
+    justify-content: start;
     flex-direction: column;
   }
   &__subtitle {

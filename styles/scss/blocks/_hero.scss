@@ -10,6 +10,7 @@
     inset: 0;
     z-index: -1;
     transition: $transition-duraction;
+    mask-image: none;
 
     img {
       @include ibg;

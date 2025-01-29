@@ -561,6 +561,8 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -767,6 +769,8 @@ html {
   z-index: -1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  -webkit-mask-image: none;
+          mask-image: none;
 }
 .hero__img img {
   position: absolute;
@@ -968,6 +972,9 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1368,6 +1375,11 @@ html {
   padding-inline: calc(20px + 5 * (100vw - 320px) / 424);
   border-radius: 30px;
   background-color: #fff;
+  -webkit-transform: rotateX(80deg);
+          transform: rotateX(80deg);
+  opacity: 0;
+  -webkit-transition: 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: 0.4s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 @media (min-width: 767.98px) {
   .about__card {
@@ -1420,6 +1432,15 @@ html {
         -ms-transform: scale(1.2);
             transform: scale(1.2);
   }
+}
+.about__card:nth-child(odd) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.about__card.active {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  opacity: 1;
 }
 .about__person {
   display: -webkit-box;
@@ -2306,6 +2327,8 @@ html {
   -webkit-column-gap: 16px;
      -moz-column-gap: 16px;
           column-gap: 16px;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 @media (min-width: 576px) {
   .footer__navs {

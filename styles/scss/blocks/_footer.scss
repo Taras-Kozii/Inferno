@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-around;
     column-gap: 16px;
+    transition-delay: 0.6s;
 
     @include onTablet {
       flex: 0 0 36.333%;
